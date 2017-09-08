@@ -10,7 +10,7 @@ namespace virtualPet
     {
         //FIELDS (at least 3 required)
 
-        private string name;
+        private string bloopName; //name for the original Bloop
         private int currentNumBuds; //number of buds each Bleep currently has (every Bleep has exactly the same)
         private int currentEnergy; //amount of energy each Bleep currently has 
         private int energyToBud; //amount of energy needed to grow a new bud                      
@@ -20,10 +20,10 @@ namespace virtualPet
           
 
         //PROPERTIES  (at least 3 required)
-        public string Name
+        public string BloopName
         {
-            get { return this.name; }
-            set { this.name = value; }//allows user to choose a name
+            get { return this.bloopName; }
+            set { this.bloopName = value; }//allows user to choose a name
         }
 
        
@@ -58,7 +58,7 @@ namespace virtualPet
         // CONSTRUCTORS (at least 1 required)
         public Bleeps()//default - no user input
         {
-            this.name = "Blobbi"; //default name
+            this.bloopName = "Blobbi"; //default name
             this.currentNumBuds = 0;
             this.currentEnergy = 10;
             this.isHappy = true;
@@ -66,9 +66,9 @@ namespace virtualPet
 
         }
 
-        public Bleeps(string name)//user chooses name
+        public Bleeps(string bloopName)//user chooses name for the Bloop
         {
-            this.name = name; //user inputs a name
+            this.bloopName = bloopName; //user inputs a name
             this.currentNumBuds = 0;
             this.currentEnergy = 10;
             this.isHappy = false;
@@ -76,35 +76,43 @@ namespace virtualPet
 
         }
 
-        //NTS THIS is an advanced option for later...
-        public MiPodi(string name, int podiType)//user chooses name & type
-        {
-            this.name = name; //user inputs a name
-            this.podiType = podiType; //user chooses a type
-            this.currentNumPods = 0;
-            this.currentEnergy = 10;
-            this.isHappy = false;
-
-        }
-
         //METHODS (at least 3 required)
 
-        public void Eat()
+        public void Energize()
+        {
+            Console.WriteLine("Bleeps are energized by moonlight.");
+            Console.WriteLine("This feels so good!");
+            this.currentEnergy += 10;
+
+        }
+
+        public void Juggle()
+        {
+            Console.WriteLine("Bleeps love to play!  Juggling makes them happy and energetic!");
+            this.currentEnergy += 10;
+            this.isAnnoyed = false;
+            this.isHappy = true;
+        }
+
+        public void Sing()
+        {
+            Console.WriteLine("Bleeps love singing best!");
+            Console.WriteLine("You hear a faint humming in your head. It seems vaguely familiar...");
+            Console.WriteLine("Boodee boodee boodee boop...");
+                Console.WriteLine("......................Boodee boodee boodee boop");
+            Console.WriteLine("Boodee boodee boodee boop...");
+            Console.WriteLine(".........................Boop boop boop boop");
+            this.currentEnergy += 50;
+            this.isAnnoyed = false;
+            this.isHappy = true;
+        }
+
+        public void Bud()
         {
 
         }
 
-        public void Play()
-        {
-
-        }
-
-        public void Podulate()
-        {
-
-        }
-
-        public void Popate()
+        public void Sleep()
         {
 
         }

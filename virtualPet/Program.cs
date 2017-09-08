@@ -58,25 +58,64 @@ namespace virtualPet
 
             //ask to rename the Bloop
 
-            Console.WriteLine("The Bloop's name is Blobbi");
-            Console.WriteLine("Would you like to rename your Bloop?");
-            Console.WriteLine("1) yes");//starts out sad :(
-            Console.WriteLine("2) That's a great name! I'm glad to meet you, Blobbi!");//starts out happy :)!
-            int answerName = int.Parse(Console.ReadLine());
-            if (answerName == 1)
+            //Console.WriteLine("The Bloop's name is Blobbi");
+            //Console.WriteLine("Would you like to rename your Bloop?");
+            //Console.WriteLine("1) yes");//starts out sad :(
+            //Console.WriteLine("2) no" );//starts out happy :)!
+            //int answerName = int.Parse(Console.ReadLine());
+            //if (answerName == 1)
+            //{
+            //    Console.WriteLine("What would you like to call your Bloop?");
+            //    string newBloopName = Console.ReadLine();
+            //    Bleeps bloop = new Bleeps(newBloopName);
+            //    string name = bloop.BloopName;
+            //    Console.WriteLine("Renaming your Bloop {0} has made it sad. Lucky for you, Bleeps have short memories!",name);
+
+            //    //NTS name can't be defined here, cannot pass from an if statement...
+
+            //}
+            //else
+            //{
+            //    Bleeps bloop = new Bleeps();
+            //    string name = bloop.BloopName;
+            //    Console.WriteLine("That's a great name! I'm glad to meet you, {0}!", name);
+
+            //    //NTS name can't be defined here, cannot pass from an if statement...
+            //}
+
+            Bleeps bloop = new Bleeps();
+            bool keepPlaying = true;
+            do
             {
-                Console.WriteLine("What would you like to call your Bloop?");
-                //NTS name can't be defined here, pass from the class...
-                //NTS set isHappy to false - or just pass it from the definition??
-                //NTS invoke Bleeps(bloopName)
+                Console.WriteLine("Current status of {0} the Bloop: ", bloop.BloopName);
+                Console.WriteLine("Energy: {0}", bloop.CurrentEnergy);
+                Console.WriteLine("Number of Buds: {0}", bloop.CurrentNumBuds);
+                Console.WriteLine("isHappy? {0}", bloop.IsHappy);
+                Console.WriteLine("isAnnoyed? {0}", bloop.IsAnnoyed);
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("1) Play in the moonlight 2) Juggle 3) Sing");
+                int choiceToDo = int.Parse(Console.ReadLine());
+                if (choiceToDo == 1)
+                {
+                    bloop.Energize();
+                }
+                else if (choiceToDo == 2)
+                {
+                    bloop.Juggle();
+                }
+                else if (choiceToDo == 3)
+                {
+                    bloop.Sing();
+                }
+                else
+                {
+                    Console.WriteLine("You are sitting. Nothing is happening. Ho hum.");
+                }
             }
-            else
-            {
-                //set isHappy is true
-                //invoke Bleeps()
-            }
+            while (keepPlaying = true);
 
             //INTERFACE (shows each time)
+            // Console.WriteLine("{0} the Bloop:", bloop.BloopName);
             //Example - Horace the Hippo
             //Hunger: 27
             //Thirst: 5
@@ -90,8 +129,9 @@ namespace virtualPet
             //4.Put Horace to sleep
             //5.Do nothing
 
-            Console.WriteLine("{0} the Bloop",Bleeps.bloopName);//need to pass this from the class?
-            Console.WriteLine("Energy: {0}",);
+            //Console.WriteLine("{0} the Bloop",Bleeps.bloopName);//need to pass this from the class?
+            //Console.WriteLine("Energy: {0}",);
+
 
 
             /*NTS - this is the advanced stuff - finish the MVP first!
