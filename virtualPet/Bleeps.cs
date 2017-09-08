@@ -80,39 +80,48 @@ namespace virtualPet
 
         public void Energize()
         {
+            Console.WriteLine();
             Console.WriteLine("Bleeps are energized by moonlight.");
             Console.WriteLine("This feels so good!");
+            Console.WriteLine();
             this.currentEnergy += 10;
 
         }
 
         public void Juggle()
         {
-            Console.WriteLine("Bleeps love to play!  Juggling makes them happy and energetic!");
-            this.currentEnergy += 10;
+            Console.WriteLine();
+            Console.WriteLine("Bleeps love to play!  Juggling makes them happy and more energetic!");
+            Console.WriteLine();
+            this.currentEnergy += 20;
             this.isAnnoyed = false;
             this.isHappy = true;
         }
 
         public void Sing()
         {
+            Console.WriteLine();
             Console.WriteLine("Bleeps love singing best!");
             Console.WriteLine("You hear a faint humming in your head. It seems vaguely familiar...");
-            Console.WriteLine("Boodee boodee boodee boop...");
+            Console.WriteLine("Boodee boodee boodee boop");
                 Console.WriteLine("......................Boodee boodee boodee boop");
-            Console.WriteLine("Boodee boodee boodee boop...");
+            Console.WriteLine("Boodee boodee boodee boop");
             Console.WriteLine(".........................Boop boop boop boop");
+            Console.WriteLine();
             this.currentEnergy += 50;
             this.isAnnoyed = false;
             this.isHappy = true;
         }
 
-        public void Bud()
+        
+       //NTS extra
+        public void Sleep()
         {
 
         }
 
-        public void Sleep()
+        //NTS - Stretch - individual action not user directed
+        public void Bud()
         {
 
         }
