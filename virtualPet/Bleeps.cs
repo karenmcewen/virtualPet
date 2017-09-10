@@ -20,7 +20,7 @@ namespace virtualPet
 
         //FOR LATER DEVELOPMENT
         //private bool isAnnoyed; //if you annoy them, they'll Blick Bowl you
-        // private int currentNumBuds; //number of buds each Bleep currently has (every Bleep has exactly the same)  
+        //private int currentNumBuds; //number of buds each Bleep currently has (every Bleep has exactly the same)  
         //private int energyToBud; //amount of energy needed to grow a new bud       
 
         //PROPERTIES  (+at least 3 required)
@@ -34,24 +34,24 @@ namespace virtualPet
         public string Color
         {
             get { return this.color; }
-            set { this.color = value; }//needed if want to change name in Program Main
+            set { this.color = value; }//needed if want to change color in Program Main
         }
 
         public int CurrentEnergy
         {
             get { return this.currentEnergy; }
-            //no set because user does not have input into this
+            //no set because user/Program.cs does not have input into this
         }
         public int PokeCounter
         {
             get { return this.pokeCounter; }
-            //no set because user does not have input into this
+            //no set because user/Program.cs does not have input into this
         }
 
         public bool IsHappy
         {
             get { return this.isHappy; }
-            //no set because user does not have input into this
+            //no set because user/Program.cs does not have input into this
         }
 
         /* FOR LATER DEVELOPMENT
@@ -72,7 +72,7 @@ namespace virtualPet
         }
         */
 
-        // CONSTRUCTORS (+at least 1 required)
+        // CONSTRUCTORS (+at least 1 required) - a specific instance of the class
         public Bleeps()//default - no user input
         {
             this.bloopName = "Blobbi"; //default name
@@ -98,7 +98,7 @@ namespace virtualPet
 
         //METHODS (+at least 3 required)
         //4 methods - Energize(), Juggle(), Sing(), Poke()
-        public void Energize()
+        public void Energize() 
         {
             Console.WriteLine();
             Console.WriteLine("* ~ * ~ * ~ * Bleeps are energized by moonlight. * ~ * ~ * ~ * ");

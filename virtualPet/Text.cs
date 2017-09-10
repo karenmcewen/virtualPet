@@ -13,6 +13,17 @@ namespace virtualPet
         //THIS IS INFO FOR ALTERNATE-ADVANCED GAME PLAY for later development
         //-------------------------------------------------------------
 
+        //Console.WriteLine();
+        //Console.WriteLine("|================================================================|");
+        //Console.WriteLine("|                             oooooo                             |");
+        //Console.WriteLine("|                          (O   oo    O)                         |");
+        //Console.WriteLine("|                       (OO oo  --  oo OO)                       |");
+        //Console.WriteLine("|                       (OO oo  --  oo OO)                       |");
+        //Console.WriteLine("|                          (O   oo    O)                         |");
+        //Console.WriteLine("|                             oooooo                             |");
+        //Console.WriteLine("|================================================================|");
+        //Console.WriteLine();
+
         //Introduction 
         //Console.WriteLine("Welcome to Planet X");
         //Console.WriteLine("Sadly, the planet's inhabitants, the Bleeps, have become nearly extinct.");

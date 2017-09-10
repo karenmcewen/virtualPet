@@ -8,24 +8,39 @@ namespace virtualPet
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            //Requirements - Main method
+            //--------------------------------------------------------------------------------------------
+            //REQUIREMENTS - Main method
             //+Interactive user interface (see example at bottom of page)
             //+Display current status of pet
             //+Display options for interacting with pet
             //+Ask user what action to take
             //+User's selection should trigger an action
-            //-Stretch task "tick"
-
-            //This program is a virtual pet Bloop from the planet Bleep (see INTRODUCTION below)
-            //there are two additional methods defined in program.cs - BleepPic() and EndGame()
             
+            //STRETCH TASKS -
+            //-Give the pet the ability to take care of some of its own needs
+            //+A visual representation of the pet using ASCII art
+            //-Calling Tick() method
+            //-Alternative interfaces - other than CONSOLE
+            
+            //SKILLS REQUIRED:
+            //+Loops (while, do/while,for)
+            //-Arrays (not needed here, technically all strings are char arrays)
+            //+Methods (Program.cs - BleepPic() and EndGame(); Bleeps.cs - 
+            //+Intro to OOP (Object Oriented Programming - using real world things to organize code intuitively)
+            //+Defining Classes(Bleeps.cs, Text.cs (placeholder for future expansion))
+            //+Creating Classes and Access Modifiers (private & public)
+            //              private=available only within class; public=available outside of class
+            //--------------------------------------------------------------------------------------------
+            
+            //VIRTUALPET INTRODUCTION
+            //This program is a virtual pet Bloop from the planet Bleep (see INTRODUCTION below)
             //There are three ways to end game - user chooses to quit, 
             //bloop.energy > 200 and the bloop becomes twins!
             //or bloop.pokeCounter = 2 and the unhappy bloop is taken away"
-            
-            //INTRODUCTION
+
+            //INITIATING GAME PLAY
 
             BleepPic(); //this reusable method draws the Bloop the user has adopted
 
@@ -54,12 +69,12 @@ namespace virtualPet
             }
 
 
-            //Main part of program
+            //MAIN GAME PLAY part of program
 
-            Bleeps bloop = new Bleeps();
+            Bleeps bloop = new Bleeps(); //specific instance is "bloop" of class "Bleeps.cs"
             bool keepPlaying = true;
 
-            do
+            do //uses nested do/while loops for multiple endpoints to the game
             {
                 do
                 {
@@ -72,6 +87,7 @@ namespace virtualPet
                     Console.WriteLine("                      isHappy?: {0}             ", bloop.IsHappy);
                     Console.WriteLine("                         Color: {0}             ", bloop.Color);
                     Console.WriteLine();
+
                     Console.WriteLine("|================================================================|");
                     Console.WriteLine("|               What would you like to do?                       |");
                     Console.WriteLine("|                  1) Go out in the moonlight                    |");
@@ -116,11 +132,9 @@ namespace virtualPet
             while (keepPlaying == true && bloop.PokeCounter <= 2 && bloop.CurrentEnergy < 200);
             bloop.Color = "purple";//color changes with energy - could do this another way
 
-            //Game ends with energy >=200
-            if (bloop.CurrentEnergy>=200)
-            {
-                bloop.Color = "yellow";//color changes with energy - could do this another way
-
+            //Game ends with energy >=200 - could make this a variable
+            if (bloop.CurrentEnergy >= 200)
+            {                
                 Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
                 Console.WriteLine(" :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) ");
                 Console.WriteLine();
@@ -132,12 +146,12 @@ namespace virtualPet
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("|================================================================|");
-                Console.WriteLine("|            ~~~~~~                      ~~~~~~                  |");
+                Console.WriteLine("|            oooooo                      oooooo                  |");
                 Console.WriteLine("|         (O   oo    O)               (O   oo    O)              |");
                 Console.WriteLine("|      (OO oo  --  oo OO)          (OO oo  --  oo OO)            |");
                 Console.WriteLine("|      (OO oo  --  oo OO)          (OO oo  --  oo OO)            |");
                 Console.WriteLine("|         (O   oo    O)               (O   oo    O)              |");
-                Console.WriteLine("|            ~~~~~~                      ~~~~~~                  |");
+                Console.WriteLine("|            oooooo                      oooooo                  |");
                 Console.WriteLine("|================================================================|");
                 Console.WriteLine();
 
@@ -145,6 +159,7 @@ namespace virtualPet
                 Console.WriteLine();
                 string babyBloopName = Console.ReadLine();
 
+                bloop.Color = "pink";//color changes with energy - could do this another way
                 Console.WriteLine();
                 Console.WriteLine("                Now {0} and {1} are tired.", bloop.BloopName, babyBloopName);
                 Console.WriteLine("                     They are pulsing gently with a {0} glow.", bloop.Color);
@@ -155,26 +170,26 @@ namespace virtualPet
                 Console.WriteLine();
                 Console.WriteLine(" :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) ");
                 Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
-                
+
             }
 
-            /////////// end of main here ///////////////////////
+            /////////// end of Main() here ///////////////////////
         }
         //NEW METHODS That can be called over and over again
 
         public static void BleepPic()
         {
-            Console.WriteLine();          
+            Console.WriteLine();
             Console.WriteLine("|================================================================|");
-            Console.WriteLine("|                             ~~~~~~                             |");
+            Console.WriteLine("|                             oooooo                             |");
             Console.WriteLine("|                          (O   oo    O)                         |");
             Console.WriteLine("|                       (OO oo  --  oo OO)                       |");
             Console.WriteLine("|                       (OO oo  --  oo OO)                       |");
             Console.WriteLine("|                          (O   oo    O)                         |");
-            Console.WriteLine("|                             ~~~~~~                             |");
+            Console.WriteLine("|                             oooooo                             |");
             Console.WriteLine("|================================================================|");
             Console.WriteLine();
-                       
+
         }
 
         public static void EndGame()
@@ -184,7 +199,7 @@ namespace virtualPet
             Console.WriteLine("          You put the Bloop in its bed and say nighty night.");
             Console.WriteLine("                  Tomorrow is another day to play!");
             Console.WriteLine("");
-            
+
         }
     }
 }
