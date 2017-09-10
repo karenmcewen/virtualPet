@@ -9,26 +9,28 @@ namespace virtualPet
     class Bleeps
     {
         //FIELDS (+at least 3 required)
+        //5 fields - bloopName, color, currentEnergy, pokeCounter,isHappy
 
         private string bloopName; //name for the original Bloop
         private string color;//Bleeps change color when happy and energized
         private int currentEnergy; //amount of energy each Bleep currently has   
         private int pokeCounter; //how many times user pokes the Bleep        
         private bool isHappy; //becomes true if played with regularly.  
-        
+
 
         //FOR LATER DEVELOPMENT
         //private bool isAnnoyed; //if you annoy them, they'll Blick Bowl you
-       // private int currentNumBuds; //number of buds each Bleep currently has (every Bleep has exactly the same)  
+        // private int currentNumBuds; //number of buds each Bleep currently has (every Bleep has exactly the same)  
         //private int energyToBud; //amount of energy needed to grow a new bud       
 
         //PROPERTIES  (+at least 3 required)
+        //5 properties - BloopName, Color, CurrentEnergy, PokeCounter,IsHappy
         public string BloopName
         {
             get { return this.bloopName; }
             set { this.bloopName = value; }//needed if want to change name in Program Main
         }
-       
+
         public string Color
         {
             get { return this.color; }
@@ -82,7 +84,7 @@ namespace virtualPet
             //this.currentNumBuds = 0;
         }
 
-        public Bleeps(string bloopName)//user chooses name for the Bloop - not used in this version
+        public Bleeps(string bloopName)//user chooses name for the Bloop - not used in MVP version
         {
             this.bloopName = bloopName; //user inputs a name
             this.color = "blue";//beginning color
@@ -95,7 +97,7 @@ namespace virtualPet
         }
 
         //METHODS (+at least 3 required)
-
+        //4 methods - Energize(), Juggle(), Sing(), Poke()
         public void Energize()
         {
             Console.WriteLine();
@@ -112,7 +114,7 @@ namespace virtualPet
             Console.WriteLine("!  !  !  !  !          Bleeps love to play!       !  !  !  !  ! ");
             Console.WriteLine("!  !  !  Juggling makes them happy and more energetic!  !  !  !");
             Console.WriteLine();
-            this.currentEnergy += 20;            
+            this.currentEnergy += 20;
             this.isHappy = true;
         }
 
@@ -137,14 +139,14 @@ namespace virtualPet
             Console.WriteLine("                                          Boodee boodee boop!");
             Console.WriteLine();
 
-            this.currentEnergy += 50;            
+            this.currentEnergy += 50;
             this.isHappy = true;
         }
 
         public void Poke()
         {
             Console.WriteLine();
-                    Console.WriteLine("x x x x x x x x Bleeps do not like to be poked.  x x x x x x x x ");
+            Console.WriteLine("x x x x x x x x Bleeps do not like to be poked.  x x x x x x x x ");
             switch (pokeCounter)
             {
                 case 0:
@@ -166,7 +168,7 @@ namespace virtualPet
             pokeCounter += 1;
 
         }
-        
-       
+
+
     }
 }

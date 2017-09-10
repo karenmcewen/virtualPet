@@ -18,9 +18,16 @@ namespace virtualPet
             //+User's selection should trigger an action
             //-Stretch task "tick"
 
+            //This program is a virtual pet Bloop from the planet Bleep (see INTRODUCTION below)
+            //there are two additional methods defined in program.cs - BleepPic() and EndGame()
+            
+            //There are three ways to end game - user chooses to quit, 
+            //bloop.energy > 200 and the bloop becomes twins!
+            //or bloop.pokeCounter = 2 and the unhappy bloop is taken away"
+            
             //INTRODUCTION
 
-            BleepPic();
+            BleepPic(); //this reusable method draws the Bloop the user has adopted
 
             Console.WriteLine("|================================================================|");
             Console.WriteLine("|    Congratulations on adopting a Bloop from the planet Bleep!  |");
@@ -34,10 +41,10 @@ namespace virtualPet
             Console.WriteLine("|                                                                |");
             Console.WriteLine("|================================================================|");
             Console.WriteLine();
-            Console.WriteLine("For best playing experience, please lengthen the console window.");
+            Console.WriteLine(" For best playing experience, please lengthen the console window.");
             Console.WriteLine();
-            Console.WriteLine("Are you ready to begin?(yes/no)");
 
+            Console.WriteLine("Are you ready to begin?(yes/no)");
             string begin = Console.ReadLine().ToLower();
 
             while (begin != "yes")
@@ -97,6 +104,7 @@ namespace virtualPet
                         default:
                             Console.WriteLine("You are sitting. Nothing is happening. Ho hum.");
                             Console.WriteLine();
+                            //for future - could lose energy here - would need to change get/set for bloop.currentEnergy
                             break;
                     }
 
@@ -166,10 +174,8 @@ namespace virtualPet
             Console.WriteLine("|                             ~~~~~~                             |");
             Console.WriteLine("|================================================================|");
             Console.WriteLine();
-
-           
+                       
         }
-
 
         public static void EndGame()
         {

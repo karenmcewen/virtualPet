@@ -9,7 +9,7 @@ namespace virtualPet
     class Text
     {
         //-------------------------------------------------------------
-        //NOTE - THIS CLASS IS NOT USED
+        //NOTE - THIS CLASS IS NOT USED in MVP
         //THIS IS INFO FOR ALTERNATE-ADVANCED GAME PLAY for later development
         //-------------------------------------------------------------
 
