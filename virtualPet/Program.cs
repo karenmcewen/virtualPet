@@ -11,33 +11,31 @@ namespace virtualPet
         static void Main(string[] args)
         {
             //Requirements - Main method
-            //Interactive user interface (see example at bottom of page)
-            //Display current status of pet
-            //Display options for interacting with pet
-            //Ask user what action to take
-            //User's selection should trigger an action
+            //+Interactive user interface (see example at bottom of page)
+            //+Display current status of pet
+            //+Display options for interacting with pet
+            //+Ask user what action to take
+            //+User's selection should trigger an action
+            //-Stretch task "tick"
 
+            //INTRODUCTION
 
-            //Introduction 
-            //Console.WriteLine("Welcome to Planet X");
-            //Console.WriteLine("Sadly, the planet's inhabitants, the Bleeps, have become nearly extinct.");
-            //Console.WriteLine("Only a single, sad and sickly Bloop remains.");
+            BleepPic();
 
-            ////NTS-move this section to a separate thing that can be accessed again by typing 'help'
-            //Console.WriteLine("As the universe's best xenobiologist, you have been called here to save the species!");
-            //Console.WriteLine("Your job is to nurture the last Bloop back to health and happiness,");
-
-            //Console.WriteLine("A happy and healthy Bloop with enough energy begins to bud.");
-            //Console.WriteLine("Once three buds appear, and all are filled with energy,");
-            //Console.WriteLine("the buds blow up and are released by the Bloop, leaving the Bloop and its ");
-            //Console.WriteLine("three baby Bleeps tired, but ready to start the cycle again.");
-            //Console.WriteLine("Because the Bleeps are all psychically connected, each will do exactly the same as the parent Bloop");
-            //Console.WriteLine("and, in time, will bud themselves, blow up, and breed more Bleeps.");
-            //Console.WriteLine("If you take care of them, soon the planet will be repopulated!");
-            //Console.WriteLine("Bleeps are known to be fun-loving and gentle creatures, but beware!");
-            //Console.WriteLine("If you annoy them too much, they will be bothered, and will send you away.");
-            //NTS-end moved section
-
+            Console.WriteLine("|================================================================|");
+            Console.WriteLine("|    Congratulations on adopting a Bloop from the planet Bleep!  |");
+            Console.WriteLine("|    Bloops are small and round and float like a balloon.        |");
+            Console.WriteLine("|    When they are happy, they pulse with a pleasing color       |");
+            Console.WriteLine("|                                                                |");
+            Console.WriteLine("|        Bloops are very easy to care for:                       |");
+            Console.WriteLine("|        To feed your Bloop, take it outside in the moonlight.   |");
+            Console.WriteLine("|        They get even more energetic when you juggle them.      |");
+            Console.WriteLine("|        Most of all they love to sing!                          |");
+            Console.WriteLine("|                                                                |");
+            Console.WriteLine("|================================================================|");
+            Console.WriteLine();
+            Console.WriteLine("For best playing experience, please lengthen the console window.");
+            Console.WriteLine();
             Console.WriteLine("Are you ready to begin?(yes/no)");
 
             string begin = Console.ReadLine().ToLower();
@@ -48,120 +46,139 @@ namespace virtualPet
                 begin = Console.ReadLine().ToLower();
             }
 
-            //starting values
 
+            //Main part of program
 
-            //int numBuds = 3; //number of offspring (bleeps) from a single popation
-            //int totalBleeps = 1; //total number of original plus all offspring and grand offspring and great-grand...etc.
-            //int bleepsToRePopulate = 100;//number of podi needed to repopulate the planet
-
-
-            //ask to rename the Bloop
-
-            //Console.WriteLine("The Bloop's name is Blobbi");
-            //Console.WriteLine("Would you like to rename your Bloop?");
-            //Console.WriteLine("1) yes");//starts out sad :(
-            //Console.WriteLine("2) no");//starts out happy :)!
-            //int answerName = int.Parse(Console.ReadLine());
-            //switch (answerName)
-            //{
-            //    case 1:
-            //        Console.WriteLine("You chose to rename your Bloop");
-            //        Console.WriteLine("What would you like to call your Bloop?");
-            //        string newBloopName = Console.ReadLine();
-            //        Bleeps bloop = new Bleeps(newBloopName);
-            //        string name = bloop.BloopName;
-            //        Console.WriteLine("Renaming your Bloop {0} has made it sad. Lucky for you, Bleeps have short memories!", name);
-            //        break;
-
-            //    default:
-            //        Bleeps bloop = new Bleeps();
-            //        string name = bloop.BloopName;
-            //        Console.WriteLine("That's a great name! I'm glad to meet you, {0}!", name);
-            //        break;               
-
-            //}
-
-            
             Bleeps bloop = new Bleeps();
             bool keepPlaying = true;
 
             do
             {
-
-                //Menu INTERFACE (shows each time)
-                Console.WriteLine("Current status of {0} the Bloop: ", bloop.BloopName);
-                Console.WriteLine("Energy: {0}", bloop.CurrentEnergy);
-                Console.WriteLine("Number of Buds: {0}", bloop.CurrentNumBuds);
-                Console.WriteLine("isHappy? {0}", bloop.IsHappy);
-                Console.WriteLine("isAnnoyed? {0}", bloop.IsAnnoyed);
-                Console.WriteLine();
-                Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1) Play in the moonlight 2) Juggle 3) Sing 4) Quit");
-                Console.WriteLine();
-
-                int choiceToDo = int.Parse(Console.ReadLine());
-                switch (choiceToDo)
+                do
                 {
-                    case 1:
-                        bloop.Energize();
-                        break;
-                    case 2:
-                        bloop.Juggle();
-                        break;
-                    case 3:
-                        bloop.Sing();
-                        break;
-                    case 4:
-                        EndGame();
-                        keepPlaying = false;
-                        break;
-                    default:
-                        Console.WriteLine("You are sitting. Nothing is happening. Ho hum.");
-                        break;
+                    //This pic and Menu shows each time
+                    BleepPic();
+
+                    Console.WriteLine();
+                    Console.WriteLine("              Current status of {0} the Bloop:  ", bloop.BloopName);
+                    Console.WriteLine("                        Energy: {0}             ", bloop.CurrentEnergy);
+                    Console.WriteLine("                      isHappy?: {0}             ", bloop.IsHappy);
+                    Console.WriteLine("                         Color: {0}             ", bloop.Color);
+                    Console.WriteLine();
+                    Console.WriteLine("|================================================================|");
+                    Console.WriteLine("|               What would you like to do?                       |");
+                    Console.WriteLine("|                  1) Go out in the moonlight                    |");
+                    Console.WriteLine("|                  2) Juggle                                     |");
+                    Console.WriteLine("|                  3) Sing                                       |");
+                    Console.WriteLine("|                  4) Poke                                       |");
+                    Console.WriteLine("|                  5) Quit                                       |");
+                    Console.WriteLine("|================================================================|");
+                    Console.WriteLine();
+
+                    int choiceToDo = int.Parse(Console.ReadLine());
+                    switch (choiceToDo)
+                    {
+                        case 1://Play in the moonlight
+                            bloop.Energize();
+                            break;
+                        case 2:
+                            bloop.Juggle();
+                            break;
+                        case 3:
+                            bloop.Sing();
+                            break;
+                        case 4:
+                            bloop.Poke();
+                            break;
+                        case 5:
+                            EndGame();
+                            keepPlaying = false;
+                            break;
+                        default:
+                            Console.WriteLine("You are sitting. Nothing is happening. Ho hum.");
+                            Console.WriteLine();
+                            break;
+                    }
+
                 }
 
+                while (keepPlaying == true && bloop.PokeCounter <= 2 && bloop.CurrentEnergy < 100);
+                bloop.Color = "blue";//color changes with energy - could do this another way
             }
-            while (keepPlaying == true);
+            while (keepPlaying == true && bloop.PokeCounter <= 2 && bloop.CurrentEnergy < 200);
+            bloop.Color = "purple";//color changes with energy - could do this another way
 
+            //Game ends with energy >=200
+            if (bloop.CurrentEnergy>=200)
+            {
+                bloop.Color = "yellow";//color changes with energy - could do this another way
 
-            /*NTS - this is the advanced stuff - finish the MVP first!
-                        while (totalBleeps < bleepsToRePopulate)
-                        {
-                            //this is the main part of the program
+                Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
+                Console.WriteLine(" :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) ");
+                Console.WriteLine();
+                Console.WriteLine("               You have been an awesome owner! ");
+                Console.WriteLine("           {0} is filled to the brim with {1} energy units...", bloop.BloopName, bloop.CurrentEnergy);
+                Console.WriteLine("               and pulsing frantically with a {0} glow...", bloop.Color);
+                Console.WriteLine("You watch in amazement as it wobbles and bobbles and splits in two...");
+                Console.WriteLine("          You are now the proud owner of twin bleeps!");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("|================================================================|");
+                Console.WriteLine("|            ~~~~~~                      ~~~~~~                  |");
+                Console.WriteLine("|         (O   oo    O)               (O   oo    O)              |");
+                Console.WriteLine("|      (OO oo  --  oo OO)          (OO oo  --  oo OO)            |");
+                Console.WriteLine("|      (OO oo  --  oo OO)          (OO oo  --  oo OO)            |");
+                Console.WriteLine("|         (O   oo    O)               (O   oo    O)              |");
+                Console.WriteLine("|            ~~~~~~                      ~~~~~~                  |");
+                Console.WriteLine("|================================================================|");
+                Console.WriteLine();
 
-                            //show menu - either three different menus based on what is available, or one master menu and respond to user n/a
-                            //Eat() to get energy, Play() to be happy
-                            //if energy (>=20), grows another bud Bud()
-                            //if isHappy (true) and numBuds (=3) and energy (>=20) then creates offspring -->BlowsUp()
+                Console.WriteLine("            What would you like to call your new Bloop?");
+                Console.WriteLine();
+                string babyBloopName = Console.ReadLine();
 
-            
-                        }
-                        //you win!
+                Console.WriteLine();
+                Console.WriteLine("                Now {0} and {1} are tired.", bloop.BloopName, babyBloopName);
+                Console.WriteLine("                     They are pulsing gently with a {0} glow.", bloop.Color);
 
-                        Console.WriteLine("Congratulations! There are now {0} Bleeps. You have saved the species!", totalBleeps);
-                        */
-
+                Console.WriteLine();
+                Console.WriteLine("       You put the Bloops to bed and say nighty night.");
+                Console.WriteLine("                Tomorrow is another day to play!");
+                Console.WriteLine();
+                Console.WriteLine(" :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) :) ");
+                Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
+                
+            }
 
             /////////// end of main here ///////////////////////
         }
-        //CREATING NEW METHODS That can be called over and over again
-        //"public" is an access modifier - who has access to the program
-        //"int" is the return type of the data "void" doesn't return anything
-        //"Add" is the name of the method - begin with uppercase/pascal case
-        //each method should do only one thing
-        //elements in the () are the parameters
-        //elements in the {} is the body
+        //NEW METHODS That can be called over and over again
 
-        public static bool EndGame()
+        public static void BleepPic()
         {
+            Console.WriteLine();          
+            Console.WriteLine("|================================================================|");
+            Console.WriteLine("|                             ~~~~~~                             |");
+            Console.WriteLine("|                          (O   oo    O)                         |");
+            Console.WriteLine("|                       (OO oo  --  oo OO)                       |");
+            Console.WriteLine("|                       (OO oo  --  oo OO)                       |");
+            Console.WriteLine("|                          (O   oo    O)                         |");
+            Console.WriteLine("|                             ~~~~~~                             |");
+            Console.WriteLine("|================================================================|");
             Console.WriteLine();
-            Console.WriteLine("The Bleeps are sorry to see you go.");
-            Console.WriteLine("You get in your rocket ship and fly away.");
-            Console.WriteLine("...................................................>(====)>");
-            bool keepPlaying = false;
-            return keepPlaying;
 
+           
+        }
+
+
+        public static void EndGame()
+        {
+            //Game ends if user chooses to end
+            Console.WriteLine();
+            Console.WriteLine("          You put the Bloop in its bed and say nighty night.");
+            Console.WriteLine("                  Tomorrow is another day to play!");
+            Console.WriteLine("");
+            
         }
     }
 }
